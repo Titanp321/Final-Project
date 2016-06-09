@@ -1,6 +1,6 @@
 class FtdebtsController < ApplicationController
   def index
-    @ftdebts = Ftdebt.all
+    @ftdebts = Ftdebt.where(:user_id => current_user.id)
   end
 
   def show
