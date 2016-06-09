@@ -1,6 +1,6 @@
 class CcdebtsController < ApplicationController
   def index
-    @ccdebts = Ccdebt.where(:user_id => current_user.id)
+    @ccdebts = current_user.ccdebts
   end
 
   def show
