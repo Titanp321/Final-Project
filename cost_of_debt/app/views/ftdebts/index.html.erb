@@ -1,7 +1,7 @@
 <div class="page-header">
   <h1>
-    Ftdebts
-    <a href="/ftdebts/new" class="btn btn-lg btn-success">New Ftdebt</a>
+    Fixed Term Debt
+    <a href="/ftdebts/new" class="btn btn-default">Add New Fixed Term Debt</a>
   </h1>
 </div>
 
@@ -9,11 +9,10 @@
   <div class="col-md-12">
     <table class="table table-striped table-hover">
       <tr>
-        <th>Accountname</th>
-        <th>Debt apr</th>
-        <th>Debt balance</th>
-        <th>Debt term</th>
-        <th>User</th>
+        <th>Account Name</th>
+        <th>Stated Fixed Term APR</th>
+        <th>Current Balance</th>
+        <th>Balance Term Length</th>
         <th>Actions</th>
       </tr>
 
@@ -23,11 +22,10 @@
         <td><%= ftdebt.debt_apr %></td>
         <td><%= ftdebt.debt_balance %></td>
         <td><%= ftdebt.debt_term %></td>
-        <td><%= ftdebt.user_id %></td>
         <td>
-          <a href="/ftdebts/<%= ftdebt.id %>" class="btn btn-primary">Show</a>
-          <a href="/ftdebts/<%= ftdebt.id %>/edit" class="btn btn-warning">Edit</a>
-          <a href="/delete_ftdebt/<%= ftdebt.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          <a href="/ftdebts/<%= ftdebt.id %>" class="btn btn-default">Show</a>
+          <a href="/ftdebts/<%= ftdebt.id %>/edit" class="btn btn-default">Edit</a>
+          <a href="/delete_ftdebt/<%= ftdebt.id %>" class="btn btn-default" rel="nofollow">Delete</a>
         </td>
       </tr>
       <% end %>

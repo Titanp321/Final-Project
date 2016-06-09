@@ -1,20 +1,20 @@
 <div class="page-header">
-  <h3>Ftdebt #<%= @ftdebt.id %></h3>
+  <h3><%= @ftdebt.accountname %></h3>
 </div>
 
 <div class="row">
   <div class="col-md-12">
     <dl class="dl-horizontal">
-      <dt>Accountname</dt>
+      <dt>Account Name</dt>
       <dd><%= @ftdebt.accountname %></dd>
 
-      <dt>Debt apr</dt>
+      <dt>Stated Fixed Term APR</dt>
       <dd><%= @ftdebt.debt_apr %></dd>
 
-      <dt>Debt balance</dt>
+      <dt>Account Balance</dt>
       <dd><%= @ftdebt.debt_balance %></dd>
 
-      <dt>Debt term</dt>
+      <dt>Balance Term Length</dt>
       <dd><%= @ftdebt.debt_term %></dd>
 
       <dt>User</dt>
@@ -22,14 +22,14 @@
 
     </dl>
 
-    <div class="btn-group btn-group-justified">
-      <a href="/ftdebts" class="btn btn-primary">
+    <div class="btn-group">
+      <a href="/ftdebts" class="btn btn-default">
         Back
       </a>
-      <a href="/ftdebts/<%= @ftdebt.id %>/edit" class="btn btn-warning">
+      <a href="/ftdebts/<%= @ftdebt.id %>/edit" class="btn btn-default">
         Edit
       </a>
-      <a href="/delete_ftdebt/<%= @ftdebt.id %>" class="btn btn-danger" rel="nofollow">
+      <a href="/delete_ftdebt/<%= @ftdebt.id %>" class="btn btn-default" rel="nofollow">
         Delete
       </a>
     </div>

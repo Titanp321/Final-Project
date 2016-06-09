@@ -1,7 +1,7 @@
 <div class="page-header">
   <h1>
-    Ccdebts
-    <a href="/ccdebts/new" class="btn btn-lg btn-success">New Ccdebt</a>
+    Credit Cards
+    <a href="/ccdebts/new" class="btn btn-default">Add New Credit Card</a>
   </h1>
 </div>
 
@@ -9,11 +9,10 @@
   <div class="col-md-12">
     <table class="table table-striped table-hover">
       <tr>
-        <th>Accountname</th>
-        <th>Debt apr</th>
-        <th>Debt balance</th>
-        <th>Debt term</th>
-        <th>User</th>
+        <th>Account Name</th>
+        <th>Stated Credit Card APR</th>
+        <th>Current Balance</th>
+        <th>Balance Term Length</th>
         <th>Actions</th>
       </tr>
 
@@ -23,11 +22,10 @@
         <td><%= ccdebt.debt_apr %></td>
         <td><%= ccdebt.debt_balance %></td>
         <td><%= ccdebt.debt_term %></td>
-        <td><%= ccdebt.user_id %></td>
         <td>
-          <a href="/ccdebts/<%= ccdebt.id %>" class="btn btn-primary">Show</a>
-          <a href="/ccdebts/<%= ccdebt.id %>/edit" class="btn btn-warning">Edit</a>
-          <a href="/delete_ccdebt/<%= ccdebt.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          <a href="/ccdebts/<%= ccdebt.id %>" class="btn btn-default">Show</a>
+          <a href="/ccdebts/<%= ccdebt.id %>/edit" class="btn btn-default">Edit</a>
+          <a href="/delete_ccdebt/<%= ccdebt.id %>" class="btn btn-default" rel="nofollow">Delete</a>
         </td>
       </tr>
       <% end %>

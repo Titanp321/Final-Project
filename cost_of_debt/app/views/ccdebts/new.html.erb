@@ -9,7 +9,7 @@
 <% end %>
 
 <div class="page-header">
-  <h3>Add Ccdebt</h3>
+  <h3>Add Credit Card Debt</h3>
 </div>
 
 <div class="row">
@@ -21,37 +21,37 @@
       <!-- Label and input for accountname -->
       <div class="form-group">
         <label for="accountname" class="control-label">
-          Accountname
+          Account Name
         </label>
 
-        <input type="text" id="accountname" name="accountname" placeholder="Accountname" class="form-control" value="<%= @ccdebt.accountname %>">
+        <input type="text" id="accountname" name="accountname" placeholder="Account Nickname" class="form-control" value="<%= @ccdebt.accountname %>">
       </div>
 
       <!-- Label and input for debt_apr -->
       <div class="form-group">
         <label for="debt_apr" class="control-label">
-          Debt apr
+          Stated Credit Card APR
         </label>
 
-        <input type="text" id="debt_apr" name="debt_apr" placeholder="Debt apr" class="form-control" value="<%= @ccdebt.debt_apr %>">
+        <input type="text" id="debt_apr" name="debt_apr" placeholder="Credit Card APR (Decimal)" class="form-control" value="<%= @ccdebt.debt_apr %>">
       </div>
 
       <!-- Label and input for debt_balance -->
       <div class="form-group">
         <label for="debt_balance" class="control-label">
-          Debt balance
+          Account Balance
         </label>
 
-        <input type="text" id="debt_balance" name="debt_balance" placeholder="Debt balance" class="form-control" value="<%= @ccdebt.debt_balance %>">
+        <input type="text" id="debt_balance" name="debt_balance" placeholder="Balance (USD)" class="form-control" value="<%= @ccdebt.debt_balance %>">
       </div>
 
       <!-- Label and input for debt_term -->
       <div class="form-group">
         <label for="debt_term" class="control-label">
-          Debt term
+          Balance Term Length
         </label>
 
-        <input type="text" id="debt_term" name="debt_term" placeholder="Debt term" class="form-control" value="<%= @ccdebt.debt_term %>">
+        <input type="text" id="debt_term" name="debt_term" placeholder="Time Remaining (Months)" class="form-control" value="<%= @ccdebt.debt_term %>">
       </div>
 
       <!-- Label and input for user_id -->
@@ -64,7 +64,7 @@
       </div>
 
       <button class="btn btn-success">
-        Create Ccdebt
+        Add Balance
       </button>
       or
       <a href="/ccdebts">Cancel</a>
