@@ -1,0 +1,36 @@
+<div class="page-header">
+  <h1>
+    Ccdebts
+    <a href="/ccdebts/new" class="btn btn-lg btn-success">New Ccdebt</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Accountname</th>
+        <th>Debt apr</th>
+        <th>Debt balance</th>
+        <th>Debt term</th>
+        <th>User</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @ccdebts.each do |ccdebt| %>
+      <tr>
+        <td><%= ccdebt.accountname %></td>
+        <td><%= ccdebt.debt_apr %></td>
+        <td><%= ccdebt.debt_balance %></td>
+        <td><%= ccdebt.debt_term %></td>
+        <td><%= ccdebt.user_id %></td>
+        <td>
+          <a href="/ccdebts/<%= ccdebt.id %>" class="btn btn-primary">Show</a>
+          <a href="/ccdebts/<%= ccdebt.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_ccdebt/<%= ccdebt.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

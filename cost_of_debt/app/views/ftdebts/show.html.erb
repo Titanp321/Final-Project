@@ -1,0 +1,37 @@
+<div class="page-header">
+  <h3>Ftdebt #<%= @ftdebt.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <dl class="dl-horizontal">
+      <dt>Accountname</dt>
+      <dd><%= @ftdebt.accountname %></dd>
+
+      <dt>Debt apr</dt>
+      <dd><%= @ftdebt.debt_apr %></dd>
+
+      <dt>Debt balance</dt>
+      <dd><%= @ftdebt.debt_balance %></dd>
+
+      <dt>Debt term</dt>
+      <dd><%= @ftdebt.debt_term %></dd>
+
+      <dt>User</dt>
+      <dd><%= @ftdebt.user_id %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/ftdebts" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/ftdebts/<%= @ftdebt.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_ftdebt/<%= @ftdebt.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>
