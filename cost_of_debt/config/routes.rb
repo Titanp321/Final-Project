@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
+  devise_for :installs
+  devise_for :users
   # Routes for the Ccdebt resource:
   # CREATE
-  get "/", :controller => "ccdebts", :action => "index"
+  #get "/", :controller => "ccdebts", :action => "index"
+  root "ccdebts#index"
 
   get "/ccdebts/new", :controller => "ccdebts", :action => "new"
   post "/create_ccdebt", :controller => "ccdebts", :action => "create"
