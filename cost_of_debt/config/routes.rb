@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   # CREATE
 #  get "/", :controller => "ccdebts", :action => "index"
   root "ccdebts#index"
-  
+
+  get "/main/display", :controller => "calculator", :action => "display"  
+
   get "/ccdebts/new", :controller => "ccdebts", :action => "new"
   post "/create_ccdebt", :controller => "ccdebts", :action => "create"
 
