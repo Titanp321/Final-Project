@@ -1,19 +1,55 @@
 <div class="container">
-    <div class="row">
-        <div class="col-xs-12">
-          <h1>
-            Hello <%= current_user.email %>!
-          </h1>
-          <p>
-          The cost of debt calculator is a wonderfully helpful on-line tool that can help you find your total personal interest rate. Many of us have a variety of debts, each with its own terms and conditions. One of the most important conditions on these debt instruments is the interest rate. These interest rates can vary widely both overtime and loan type. For example, a mortgage is a collateral backed loan and will typically have the some of the lowest interest rates. On the other hand, a credit card is a limited amount of spending power that is not backed by any collateral and can be used at any time and in any place. Hence, the user will pay a much higher interest rate for these benefits.
-          </p>
-        </div>
-        <div class="col-md-offset-1 col-md-4">
-                <%= @monthlyPayments %>
-        </div>
-        <div class="col-md-offset-2 col-md-4"> <%= @totalInterest %> </div>
-        <div class="col-md-offset-1 col-md-4">4</div>
-        <div class="col-md-offset-2 col-md-4"> <%=@ftdebts%> </div>
-        <div class="col-xs-12">6</div>
+  <div class="row">
+    <div class="col-xs-12">
+      <h1>
+        Hello <%= current_user.email %>!
+      </h1>
+      <p>
+        The cost of debt calculator is a wonderfully helpful on-line tool that can help you find your total personal interest rate. Many of us have a variety of debts, each with its own terms and conditions. One of the most important conditions on these debt instruments is the interest rate. These interest rates can vary widely both overtime and loan type. For example, a mortgage is a collateral backed loan and will typically have the some of the lowest interest rates. On the other hand, a credit card is a limited amount of spending power that is not backed by any collateral and can be used at any time and in any place. Hence, the user will pay a much higher interest rate for these benefits.
+      </p>
     </div>
+
+    <div class="col-md-offset-1 col-md-4">
+      <table class="table table-striped table-hover">
+        <!-- @epr_rates;      @interstPayments  @principalPayments  @monthlyPayments  @totalsPaid -->
+        <h2>Fixed Term Calculated Data</h2>
+        <tr>
+          <th>Account Name</th>
+          <th>True Interest Rate</th>
+          <th>Monthly Payment</th>
+          <th>Total Amount Paid</th>
+          <th>Total Interest Paid</th>
+        </tr>
+
+        <!-- <% @ftdebts.each do |name| %>
+        <tr>
+          <td><%= name.accountname %> </td>
+            <% @epr_rates.each do |epr| %>
+              <td><%= epr %>% </td>
+                <% @monthlyPayments.each do |pay| %>
+                  <td><%= pay %> </td>
+                  </tr>
+                <% end %>
+            <% end %>
+        <% end %> -->
+        <% i =0  %>
+        <% @ftdebts.each do |name| %>
+        <% i += 1 %>
+        <tr>
+          <td><%= name.accountname %> </td>
+         <td>   <%=  @epr_rates[i-1]%> %  </td>
+          <td>  $<%= @monthlyPayments[i-1]%> </td>
+          <td>  $<%= @totalsPaid[i-1] %>   </td>
+          <td>  $<%= @interstPayments[i-1] %>   </td>
+        </tr>
+        <% end %>
+
+
+      </table>
+    </div>
+    <div class="col-md-offset-2 col-md-4"> </div>
+    <div class="col-md-offset-1 col-md-4"> </div>
+    <div class="col-md-offset-2 col-md-4"> </div>
+    <div class="col-xs-12">6</div>
+  </div>
 </div>
