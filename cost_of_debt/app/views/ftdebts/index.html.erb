@@ -16,9 +16,10 @@
         <th>Actions</th>
       </tr>
 
+
       <% @ftdebts.each do |ftdebt| %>
       <tr>
-        <td><%= ftdebt.accountname %></td>
+        <td><%= ftdebt.accountname %> </td>
         <td><%= ftdebt.debt_apr %></td>
         <td><%= ftdebt.debt_balance %></td>
         <td><%= ftdebt.debt_term %></td>
@@ -29,6 +30,7 @@
         </td>
       </tr>
       <% end %>
+
     </table>
   </div>
 </div>

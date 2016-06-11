@@ -5,7 +5,7 @@ class CalculatorController < ApplicationController
     @ccdebts = current_user.ccdebts #pull in rows relevant to current current
     @ftdebts = current_user.ftdebts
 
-
+    #@monthlyPayments = @ftdebts.class
     #month_interest_rate = @apr/1200
 
 
@@ -13,19 +13,23 @@ class CalculatorController < ApplicationController
     principalPayments = Array.new
     @monthlyPayments = Array.new
 
+
     i=0
-       @ftdebts.each do |key, ftdebt|
-         i += 1
-         #apr_rate = ftdebt['debt_apr']/1200
+    apr_rate = 0  #this doesn't matter, we don't need to initalize variables
 
-         #@monthly_payment = "Testing string #{ftdebt['accountname']}"  #this generates the string but no value from database
+       @ftdebts.each do |ftdebt|
+         i += 2
 
+
+        #  The code below works!! There is something funky going on in that I can't seem to use the . methods to access the values in the hash. ASIDE: the last value from the last loop is the value that is stored in the variable.
          #@monthlyPayments.push(ftdebt['accountname'])
+         apr_rate = ftdebt['debt_apr'].to_f
+         timeframe = ftdebt['debt_term'].to_f
+         balance = ftdebt['debt_balance'].to_f
+         @monthlyPayments.push(apr_rate, timeframe,balance)
+         #@monthlyPayments = balance*apr_rate
 
-      #   timeframe = ftdebt['debt_term']
-      #   balance = ftdebt['debt_balance']
-      #
-      #   monthly_payment = balance * apr_rate/(1-(1+apr_rate)**(-1*timeframe))
+       #monthly_payment = balance*apr_rate/(1-(1+apr_rate)**(-1*timeframe))
       #   @monthlyPayments.push(monthly_payment)
        end
 

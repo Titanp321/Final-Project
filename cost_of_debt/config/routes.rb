@@ -3,9 +3,9 @@ Rails.application.routes.draw do
   # Routes for the Ccdebt resource:
   # CREATE
 #  get "/", :controller => "ccdebts", :action => "index"
-  root "ccdebts#index"
+  root "calculator#display"
 
-  get "/main/display", :controller => "calculator", :action => "display"  
+  get "/main/display", :controller => "calculator", :action => "display"
 
   get "/ccdebts/new", :controller => "ccdebts", :action => "new"
   post "/create_ccdebt", :controller => "ccdebts", :action => "create"
