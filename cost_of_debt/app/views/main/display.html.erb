@@ -9,7 +9,7 @@
       </p>
     </div>
 
-    <div class="col-md-offset-1 col-md-4">
+    <div class="col-md-offset-1 col-md-6">
       <table class="table table-striped table-hover">
         <!-- @epr_rates;      @interstPayments  @principalPayments  @monthlyPayments  @totalsPaid -->
         <h2>Fixed Term Calculated Data</h2>
@@ -21,17 +21,7 @@
           <th>Total Interest Paid</th>
         </tr>
 
-        <!-- <% @ftdebts.each do |name| %>
-        <tr>
-          <td><%= name.accountname %> </td>
-            <% @epr_rates.each do |epr| %>
-              <td><%= epr %>% </td>
-                <% @monthlyPayments.each do |pay| %>
-                  <td><%= pay %> </td>
-                  </tr>
-                <% end %>
-            <% end %>
-        <% end %> -->
+
         <% i =0  %>
         <% @ftdebts.each do |name| %>
         <% i += 1 %>
@@ -47,9 +37,6 @@
 
       </table>
     </div>
-    <div class="col-md-offset-2 col-md-4"> </div>
-    <div class="col-md-offset-1 col-md-4"> </div>
-    <div class="col-md-offset-2 col-md-4"> </div>
-    <div class="col-xs-12">6</div>
+
   </div>
 </div>

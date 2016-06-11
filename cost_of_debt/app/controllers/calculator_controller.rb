@@ -8,7 +8,6 @@ class CalculatorController < ApplicationController
     #@monthlyPayments = @ftdebts.class
     #month_interest_rate = @apr/1200
 
-
     i=0
     apr_rate = 0  #this doesn't matter, we don't need to initalize variables
 
@@ -21,8 +20,6 @@ class CalculatorController < ApplicationController
 
        @ftdebts.each do |ftdebt|
          i += 1
-
-
         #  The code below works!! There is something funky going on in that I can't seem to use the . methods to access the values in the hash. ASIDE: the last value from the last loop is the value that is stored in the variable.
          #@monthlyPayments.push(ftdebt['accountname'])
          apr_rate = ftdebt['debt_apr'].to_f
@@ -50,12 +47,8 @@ class CalculatorController < ApplicationController
          #Calculate the total interest paid by subtracting the balance of the loan
          interestPayment = (totalPaid - balance).round(2)
          @interstPayments.push(interestPayment)
+
        end
-
-    #rate = Rate.new(0.0425, :apr, :duration => (30 * 12))
-    # amortization = Amortization.new(250000, rate)
-    # @totalInterest = amortization.payment
-
     render 'main/display'
   end
 end
