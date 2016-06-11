@@ -1,5 +1,4 @@
 class CalculatorController < ApplicationController
-require 'finance'
 
   def display
     # Pull in data from users credit cards and fixterm loans
@@ -10,19 +9,25 @@ require 'finance'
     #month_interest_rate = @apr/1200
 
 
+    interstPayments = Array.new
+    principalPayments = Array.new
+    @monthlyPayments = Array.new
 
-      @ftdebts.each do |ftdebt|
-        i += 0 
-        apr_rate = ftdebt.debt_apr/100
-        timeframe = ftdebt.debt_term
-        balance = ftdebt.debt_balance
+    i=0
+       @ftdebts.each do |key, ftdebt|
+         i += 1
+         #apr_rate = ftdebt['debt_apr']/1200
 
-        monthly_payment = balance * apr_rate/(1-(1+apr_rate)**(-1*timeframe))
-        @monthly_payment = monthly_payment +
+         #@monthly_payment = "Testing string #{ftdebt['accountname']}"  #this generates the string but no value from database
 
+         #@monthlyPayments.push(ftdebt['accountname'])
 
-        @totalInterest = 10
-      end
+      #   timeframe = ftdebt['debt_term']
+      #   balance = ftdebt['debt_balance']
+      #
+      #   monthly_payment = balance * apr_rate/(1-(1+apr_rate)**(-1*timeframe))
+      #   @monthlyPayments.push(monthly_payment)
+       end
 
     #rate = Rate.new(0.0425, :apr, :duration => (30 * 12))
     # amortization = Amortization.new(250000, rate)

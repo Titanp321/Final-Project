@@ -9,7 +9,7 @@
 <% end %>
 
 <div class="page-header">
-  <h3>Edit Ftdebt #<%= @ftdebt.id %></h3>
+  <h3>Edit Fixed Term Debt <%= @ftdebt.accountname %></h3>
 </div>
 
 <div class="row">
@@ -21,7 +21,7 @@
       <!-- Label and input for accountname -->
       <div class="form-group">
         <label for="accountname" class="control-label">
-          Accountname
+          Account Name
         </label>
 
         <input type="text" id="accountname" name="accountname" placeholder="Accountname" class="form-control" value="<%= @ftdebt.accountname %>">
@@ -55,16 +55,12 @@
       </div>
 
       <!-- Label and input for user_id -->
-      <div class="form-group">
-        <label for="user_id" class="control-label">
-          User
-        </label>
 
-        <input type="text" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= @ftdebt.user_id %>">
-      </div>
+        <input type="hidden" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= @ftdebt.user_id %>">
+
 
       <button class="btn btn-warning">
-        Update Ftdebt
+        Update Fixed Term Loan
       </button>
       or
       <a href="/ftdebts/<%= @ftdebt.id %>">Cancel</a>
