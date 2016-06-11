@@ -33,7 +33,7 @@
           Stated Fixed Term APR
         </label>
 
-        <input type="text" id="debt_apr" name="debt_apr" placeholder="Debt APR (Decimal)" class="form-control" value="<%= @ftdebt.debt_apr %>">
+        <input type="text" id="debt_apr" name="debt_apr" placeholder="Debt APR (%)" class="form-control" value="<%= @ftdebt.debt_apr %>">
       </div>
 
       <!-- Label and input for debt_balance -->
@@ -57,7 +57,7 @@
       <!-- Label and input for user_id -->
         <input type="hidden" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= current_user.id %>">
 
-      <button class="btn btn-success">
+      <button class="btn btn-default">
         Add Loan
       </button>
       or
